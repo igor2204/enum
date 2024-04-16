@@ -23,7 +23,15 @@
     {
         Console.WriteLine("Введите день недели:");
         string inputDay = Console.ReadLine();
-        DayWeek day = (DayWeek)Enum.Parse(typeof(DayWeek), inputDay);
+        DayWeek day;
+        if (Enum.TryParse(inputDay, true, out day))
+        {
+            
+        }
+        else
+        {
+            Console.WriteLine("Ошибка: введенное значение не соответствует дням недели.");
+        }
 
         Console.WriteLine("Введите время:");
         int time = Convert.ToInt32(Console.ReadLine());
